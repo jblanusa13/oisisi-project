@@ -1,0 +1,60 @@
+﻿<Window x:Class="StudSluzba.DodavanjeStudenta"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ns="clr-namespace:StudSluzba.Lokalizacija"
+        xmlns:local="clr-namespace:StudSluzba"
+        xmlns:conv="clr-namespace:StudSluzba.Konverzija"
+        mc:Ignorable="d"
+        Title="{ns:Loc AddStudent}" Height="680" Width="410" ResizeMode="NoResize" 
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <conv:KonverzijaDatuma x:Key="konvertorDatuma"/>
+        <ControlTemplate x:Key="ValidationTemplate">
+            <StackPanel>
+                <AdornedElementPlaceholder x:Name="textBox" />
+                <TextBlock Text="{Binding [0].ErrorContent}" Foreground="Red" FontSize="9px"/>
+            </StackPanel>
+
+        </ControlTemplate>
+    </Window.Resources>
+    <Grid Margin="0,-10,0,0">
+        <Label Content="{ns:Loc FirstName1}" HorizontalAlignment="Left" Margin="20,20,0,0" VerticalAlignment="Top" Width="140" Height="25"/>
+        <Label Content="{ns:Loc LastName1}" HorizontalAlignment="Left" Margin="20,65,0,0" VerticalAlignment="Top" Width="140" Height="25"/>
+        <Label Content="{ns:Loc DateBirth}" HorizontalAlignment="Left" Margin="20,110,0,0" VerticalAlignment="Top" Width="140" Height="25" Grid.Column="1"/>
+        <Label Content="{ns:Loc AdressU}" HorizontalAlignment="Left" Margin="20,155,0,0" VerticalAlignment="Top" Width="170" Height="25" Grid.Column="1"/>
+        <Label Content="{ns:Loc AdressB}" HorizontalAlignment="Left" Margin="20,200,0,0" VerticalAlignment="Top" Width="170" Height="25" Grid.Column="1"/>
+        <Label Content="{ns:Loc AdressG}" HorizontalAlignment="Left" Margin="20,245,0,0" VerticalAlignment="Top" Width="170" Height="25" Grid.Column="1"/>
+        <Label Content="{ns:Loc AdressD}" HorizontalAlignment="Left" Margin="20,290,0,0" VerticalAlignment="Top" Width="170" Height="25" Grid.Column="1"/>
+        <Label Content="{ns:Loc PhoneNumber}" HorizontalAlignment="Left" Margin="20,335,0,0" VerticalAlignment="Top" Width="140" Height="25" Grid.Column="1"/>
+        <Label Content="{ns:Loc EmailAdress1}" HorizontalAlignment="Left" Margin="20,380,0,0" VerticalAlignment="Top" Width="140" Height="25" Grid.Column="1"/>
+        <Label Content="{ns:Loc Index1}" HorizontalAlignment="Left" Margin="20,425,0,0" VerticalAlignment="Top" Width="140" Height="25" Grid.Column="1"/>
+        <Label Content="{ns:Loc YearAdmission}" HorizontalAlignment="Left" Margin="20,470,0,0" VerticalAlignment="Top" Width="140" Height="25" Grid.Column="1"/>
+        <Label Content="{ns:Loc YearOfStudy1}" HorizontalAlignment="Left" Margin="20,515,0,0" VerticalAlignment="Top" Width="140" Height="25" Grid.Column="1"/>
+        <Label Content="{ns:Loc Status1}" HorizontalAlignment="Left" Margin="20,560,0,0" VerticalAlignment="Top" Width="140" Height="25" Grid.Column="1"/>
+        <TextBox HorizontalAlignment="Left" Text="{Binding Path=Ime, UpdateSourceTrigger=PropertyChanged, Mode=OneWayToSource, ValidatesOnDataErrors=True}" Validation.ErrorTemplate="{StaticResource ValidationTemplate}" Margin="200,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Height="25"/>
+        <TextBox HorizontalAlignment="Left" Text="{Binding Path=Prezime, UpdateSourceTrigger=PropertyChanged, Mode=OneWayToSource, ValidatesOnDataErrors=True}" Validation.ErrorTemplate="{StaticResource ValidationTemplate}" Margin="200,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Height="25"/>
+        <TextBox HorizontalAlignment="Left" Text="{Binding Path=DatumRodjenja, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Validation.ErrorTemplate="{StaticResource ValidationTemplate}" Margin="200,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Height="25"/>
+        <TextBox HorizontalAlignment="Left" Text="{Binding Path=StanovanjeUlica, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged,ValidatesOnDataErrors=True}" Validation.ErrorTemplate="{StaticResource ValidationTemplate}" Margin="200,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Height="25"/>
+        <TextBox HorizontalAlignment="Left" Text="{Binding Path=StanovanjeBroj, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged,ValidatesOnDataErrors=True}" Validation.ErrorTemplate="{StaticResource ValidationTemplate}" Margin="200,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Height="25"/>
+        <TextBox HorizontalAlignment="Left" Text="{Binding Path=StanovanjeGrad, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged,ValidatesOnDataErrors=True}" Validation.ErrorTemplate="{StaticResource ValidationTemplate}" Margin="200,245,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Height="25"/>
+        <TextBox HorizontalAlignment="Left" Text="{Binding Path=StanovanjeDrzava, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged,ValidatesOnDataErrors=True}" Validation.ErrorTemplate="{StaticResource ValidationTemplate}" Margin="200,290,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Height="25"/>
+        <TextBox HorizontalAlignment="Left" Text="{Binding Path=BrojTelefona, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Validation.ErrorTemplate="{StaticResource ValidationTemplate}" Margin="200,335,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Height="25"/>
+        <TextBox HorizontalAlignment="Left" Text="{Binding Path=Imejl, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Validation.ErrorTemplate="{StaticResource ValidationTemplate}" Margin="200,380,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Height="25"/>
+        <TextBox HorizontalAlignment="Left" Text="{Binding Path=Indeks, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Validation.ErrorTemplate="{StaticResource ValidationTemplate}" Margin="200,425,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Height="25"/>
+        <TextBox HorizontalAlignment="Left" Text="{Binding Path=GodinaUpisa, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Validation.ErrorTemplate="{StaticResource ValidationTemplate}"  Margin="200,470,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Height="25"/>
+        <ComboBox Name ="CB1" HorizontalAlignment="Left" Text="{Binding Path=GodinaStudija, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Validation.ErrorTemplate="{StaticResource ValidationTemplate}" IsEditable="False" Margin="200,515,0,0" VerticalAlignment="Top" Width="180" Height="25">
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="2"/>
+            <ComboBoxItem Content="3"/>
+            <ComboBoxItem Content="4"/>
+        </ComboBox>
+        <ComboBox Name ="CB2" HorizontalAlignment="Left" Text="{Binding Path=Status, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Validation.ErrorTemplate="{StaticResource ValidationTemplate}" IsEditable="False" Margin="200,560,0,0" VerticalAlignment="Top" Width="180" Height="25">
+            <ComboBoxItem Content="B" IsSelected="False"/>
+            <ComboBoxItem Content="S" IsSelected="False"/>
+        </ComboBox>
+        <Button Content="{ns:Loc Confirm}" Click="Potvrdi_Click" HorizontalAlignment="Left" Margin="90,610,0,0" VerticalAlignment="Top" Width="60" Height="30" Background="#FF77A7FF"/>
+        <Button Content="{ns:Loc Cancel}" Click="Odustani_Click" HorizontalAlignment="Left" Margin="230,610,0,0" VerticalAlignment="Top" Width="60" Height="30"/>
+    </Grid>
+</Window>

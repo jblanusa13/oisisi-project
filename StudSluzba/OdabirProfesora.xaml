@@ -1,0 +1,17 @@
+﻿<Window x:Class="StudSluzba.OdabirProfesora"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StudSluzba"
+        xmlns:ns="clr-namespace:StudSluzba.Lokalizacija"
+        mc:Ignorable="d"
+        Title="{ns:Loc ChoseProfessor}" Height="300" Width="400" ResizeMode="NoResize"  WindowStartupLocation="CenterScreen">
+    <Grid>
+        <ListBox Name ="ListBoxOdabir" ItemsSource="{Binding Path=ListaProfesora ,Mode =TwoWay ,UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment ="Center" IsSynchronizedWithCurrentItem="true" SelectionMode="Single" 
+                 SelectedItem="{Binding Path=OdabraniProfesor, UpdateSourceTrigger=PropertyChanged}" Width="320" Margin="0,29,0,52"/>
+        <Button Content="{ns:Loc Confirm}" Click ="Potvrdi_Click" HorizontalAlignment="Right" Margin="0,0,150,15" VerticalAlignment="Bottom" Width="80" Height="22" FontSize="16" Background="#FF77A7FF"/>
+        <Button Content="{ns:Loc Cancel}" Click ="Odustani_Click" HorizontalAlignment="Right" Margin="0,0,50,15" VerticalAlignment="Bottom" Width="80" Height="22" FontSize="16"/>
+    </Grid>
+
+</Window>

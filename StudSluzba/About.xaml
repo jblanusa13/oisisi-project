@@ -1,0 +1,15 @@
+﻿<Window x:Class="StudSluzba.About"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StudSluzba"
+        mc:Ignorable="d"
+        Title="About" Height="200" Width="300" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="110,20,0,0" TextWrapping="Wrap" Text="Autori:" VerticalAlignment="Top" FontFamily="Sitka Small Semibold" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="70,80,0,0" TextWrapping="Wrap" Text="Ana Ranić, RA 97/2020" VerticalAlignment="Top" FontFamily="Bookman Old Style" Grid.ColumnSpan="2" Width="170"/>
+        <TextBlock HorizontalAlignment="Left" Margin="55,120,0,0" TextWrapping="Wrap" Text="Jelena Blanuša, RA 100/2020" VerticalAlignment="Top" Grid.ColumnSpan="2" FontFamily="Bookman Old Style"/>
+    </Grid>
+</Window>

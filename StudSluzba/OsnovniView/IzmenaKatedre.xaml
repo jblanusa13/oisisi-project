@@ -1,0 +1,32 @@
+﻿<Window x:Class="StudSluzba.OsnovniView.IzmenaKatedre"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ns="clr-namespace:StudSluzba.Lokalizacija"
+        xmlns:local="clr-namespace:StudSluzba.OsnovniView"
+        mc:Ignorable="d"
+         Title="{ns:Loc EditDepartment}" Height="300" Width="450"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <ControlTemplate x:Key="ValidationTemplate">
+            <StackPanel>
+                <!-- Placeholder for the TextBox itself -->
+                <AdornedElementPlaceholder x:Name="textBox" />
+                <TextBlock Text="{Binding [0].ErrorContent}" Foreground="Red" FontSize="9"/>
+            </StackPanel>
+        </ControlTemplate>
+    </Window.Resources>
+    <Grid Margin="0,-10,0,0">
+        <Label Content="{ns:Loc Code1}" HorizontalAlignment="Left" Margin="30,30,0,0" VerticalAlignment="Top" Width="140" Height="25"/>
+        <Label Content="{ns:Loc Name1}" HorizontalAlignment="Left" Margin="30,75,0,0" VerticalAlignment="Top" Width="140" Height="25"/>
+        <Label Content="{ns:Loc BossDepartment1}" HorizontalAlignment="Left" Margin="30,120,0,0" VerticalAlignment="Top" Width="140" Height="25" Grid.Column="1"/>
+        <TextBox HorizontalAlignment="Left" Text="{Binding Path=Sifra, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Validation.ErrorTemplate="{StaticResource ValidationTemplate}" IsReadOnly="True" Margin="180,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" Height="25"/>
+        <TextBox HorizontalAlignment="Left" Text="{Binding Path=Naziv, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Validation.ErrorTemplate="{StaticResource ValidationTemplate}" Margin="180,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" Height="25"/>
+        <TextBox HorizontalAlignment="Left" Text="{Binding Path=SefKatedre, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Validation.ErrorTemplate="{StaticResource ValidationTemplate}" IsReadOnly="True" Margin="180,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="25"/>
+        <Button Name="DodajBtn" Content="+" Click="Dodaj_Sefa_Click" HorizontalAlignment="Left" Margin="330,120,0,0" VerticalAlignment="Top" Width="25" Height="25" Background="White"/>
+        <Button Name="UkloniBtn" Content="-"  Click="Ukloni_Sefa_Click" HorizontalAlignment="Left" Margin="370,120,0,0" VerticalAlignment="Top" Width="25" Height="25" Background="White"/>
+        <Button Name="PotvrdiBtn" Content="{ns:Loc Confirm}"  Click ="Potvrdi_Click" HorizontalAlignment="Left" Margin="120,180,0,0" VerticalAlignment="Top" Width="60" Height="30" Background="#FF77A7FF"/>
+        <Button Name="OdustaniBtn" Content="{ns:Loc Cancel}" Click ="Odustani_Click" HorizontalAlignment="Left" Margin="250,180,0,0" VerticalAlignment="Top" Width="60" Height="30"/>
+    </Grid>
+</Window>
